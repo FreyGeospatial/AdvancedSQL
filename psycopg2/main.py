@@ -41,3 +41,26 @@ my_columns = cur.fetchall()
 filtered_columns = list(filter(lambda x: 'active' in x[0], my_columns))
 
 print(filtered_columns)
+
+
+###########################
+# note: if performing a transaction / query that fails, you might need to run a rollback command to enable future transactions to work
+# e.g., con.rollback()
+#######################
+
+# use placeholders to generate sql queries with a variable number of arguments
+names = ['Jordan', 'Danny']
+desired_cols = ['employeeid', 'firstname']
+q1 = sql.SQL("SELECT {} FROM employee e").format(sql.SQL(",").join(map(sql.Identifier, desired_cols))) # sql.Identifier is used for schema, tables, and field names
+print(q1.as_string(con)) # view composed query as string
+cur.execute(q1)
+cur.fetchall()
+
+
+q2 = sql.SQL("SELECT * FROM employee e where firstname in ({});").format(sql.SQL(",").join(sql.Placeholder() * len(names))) # sql.Placeholder is used for string vals (maybe int too? tbd)
+# view all methods available on object q2:
+dir(q2)
+print(q2.as_string(con))
+
+cur.execute(q2, tuple(names)) # here, we supply variable arguments as a tuple. if we change len of names, this still works :)
+cur.fetchall()
