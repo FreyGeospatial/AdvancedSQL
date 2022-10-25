@@ -1,5 +1,5 @@
 # AdvancedSQL
-Here, I will examine intermediate and advanced sql functions.
+Here, I will examine intermediate and advanced sql functions, usually using Python as an intermediary between myself and the database.
 
 ### Reusable code and tips:
 
