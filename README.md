@@ -1,5 +1,7 @@
 # AdvancedSQL
-Here, I will examine intermediate and advanced sql functions, usually using Python as an intermediary between myself and the database.
+Here, I will examine intermediate and advanced sql functions, usually using Python as an intermediary between myself and the database. Databases I will be using will mostly be:
+- Postgres (and maybe PostGIS)
+- SQL Server
 
 ### Reusable code and tips:
 
