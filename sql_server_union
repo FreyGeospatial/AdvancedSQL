@@ -1,0 +1,33 @@
+--https://www.youtube.com/watch?v=Jva68Yh_s1E
+/* union is kinda like appending records 
+
+UNION ALL will append all records regardless of duplicates
+UNION (without ALL) will remove duplicates
+
+*/
+
+select * from employee
+where employeeId between 1 and 5
+
+--vs 
+
+select * from employee
+where employeeId between 1 and 5
+UNION ALL
+select * from employee
+where employeeId between 1 and 5
+
+-- vs
+select * from employee
+where employeeId between 1 and 5
+UNION ALL
+select * from employee
+where employeeId between 4 and 6
+
+-- vs
+
+select * from employee
+where employeeId between 1 and 5
+UNION
+select * from employee
+where employeeId between 4 and 6
