@@ -12,4 +12,4 @@ insert into mytable (id)
 values (2);
 
 update mytable
-set test_json = json_parse('{"house": {"living_room": ["couch", "television"]:}}');
+set test_json = json_parse('{"house": {"living_room": ["couch", "television"]}}');
