@@ -8,6 +8,9 @@ Here, I will examine intermediate and advanced sql functions, usually using Pyth
 SQL Server local host connection string: `f'Driver={{SQL Server}};Server=<localhost OR computer name>;Database=<db name>;Trusted_Connection=yes;'`
 - `Trusted connection=yes` assumes Windows authentication is being used.
 
+Redshift current datetime in UTC:
+- `GETDATE() at time zone current_setting('timezone') at time zone 'utc'`
+
 To run SQL Server on an M1 Mac, follow the steps here:
 - https://database.guide/how-to-install-sql-server-on-an-m1-mac-arm64/
 - TLDR:
